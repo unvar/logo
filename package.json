@@ -6,7 +6,7 @@
   "author": "unvar",
   "license": "MIT",
   "devDependencies": {
-    "husky": "^3.1.0",
+    "husky": "^4.0.0-beta.5",
     "nodeunit": "^0.11.3",
     "pegjs": "^0.10.0",
     "pug-cli": "^1.0.0-alpha6",
@@ -14,6 +14,7 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.1.3",
+    "serve": "^11.2.0",
     "stylus": "^0.54.7"
   },
   "scripts": {
@@ -22,7 +23,8 @@
     "gen:styles": "stylus src/styles/style.styl -o public/css/main.css",
     "gen:index": "pug -o . -P src/views/index.pug",
     "build": "yarn gen:styles & yarn gen:parser & yarn gen:js & yarn gen:index",
-    "test": "nodeunit tests"
+    "test": "nodeunit tests",
+    "serve": "serve"
   },
   "husky": {
     "hooks": {
