@@ -1,0 +1,78 @@
+h3.title Basic Usage
+p.text 
+    | Just enter your logo code in the textbox and click the Enter 
+    | button to execute. Click the little arrow next to the textbox
+    | to switch to multiline mode.
+h3.title Shortcuts
+ul
+    li.shortcut
+        div.key ENTER / Ctrl + ENTER (Ctrl in multiline mode)
+        div.desc Execute the code in the text box
+    li.shortcut
+        div.key Alt + UP / Alt + DOWN
+        div.desc Execute the code in the text box
+    li.shortcut
+        div.key UP / DOWN / Ctrl + UP / Ctrl + DOWN (Ctrl in multiline mode)
+        div.desc Move through your previous commands
+h3.title Commands (case insensitive)
+ul
+    li.command
+        div.code FORWARD <i>steps</i> / FD <i>steps</i>
+        div.desc Move the turtle forward
+    li.command
+        div.code BACK <i>steps</i> / BK <i>steps</i>
+        div.desc Move the turtle backward
+    li.command
+        div.code RIGHT <i>angle</i> / RT <i>angle</i>
+        div.desc Turn the turtle right by a given angle
+    li.command
+        div.code LEFT <i>angle</i> / LT <i>angle</i>
+        div.desc Turn the turtle left by a given angle
+    li.command
+        div.code REPEAT <i>num</i> [ <i>statements</i> ]
+        div.desc 
+            | Repeat the statements for a given number of times. Statements 
+            | can be any combination of above commands or repeat itself.
+        div.example For example: REPEAT 4 [ FD 100 RT 90 ] - will draw a square
+    li.command
+        div.code CLEAR / CLS
+        div.desc Clears the screen
+    li.command
+        div.code COLOR <i>value</i> / CLR <i>val</i>
+        div.desc Change the color to the given value. Value can be between 1 - 10
+    li.command
+        div.code PENUP
+        div.desc Lift the turtle's pen so it can move around without drawing
+    li.command
+        div.code PENDOWN
+        div.desc Put the turtle's pen down
+    li.command
+        div.code HOME
+        div.desc Send the turtle to the center
+h3.title Procedures
+p.text 
+    | A procedure can be define by using a define statement and ended using an end.
+    | The body of the procedure can contain any number of statements.
+    | The procedure name has to be alphabetic and cannot be one of the commands above.
+div.example
+    pre
+        | define sq
+        | fd 50
+        | rt 90
+        | repeat 3 [ fd 50 rt 90 ]
+        | end
+p.text To use a procedure, just use the name as part of your statement.
+div.example repeat 4 [ fd 25 rt 90 sq ]
+h3.title Variables
+p.text You can declare a variable using a simple assignment statement.
+div.example x = 10
+p.text And then use them anywhere in the code alongwith with add/multiple operations on them.
+div.example
+    pre
+        | clear
+        | x = 5
+        | repeat 12 [ repeat 4 [ fd x rt 90 ] penup lt x fd (x*2) x = x + 5 pendown ]
+        | home
+        | x = 5
+        | repeat 12 [ repeat 4 [ fd x lt 90 ] penup rt x fd (x*2) x = x + 5 pendown ]
+
