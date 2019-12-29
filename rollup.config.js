@@ -7,7 +7,7 @@ const production = false //!process.env.ROLLUP_WATCH;
 export default {
 	input: 'src/js/main.js',
 	output: {
-		file: 'public/js/main.js',
+		file: 'static/js/main.js',
 		format: 'iife', // immediately-invoked function expression — suitable for <script> tags
 		sourcemap: true
 	},
