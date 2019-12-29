@@ -4,3 +4,4 @@ LICENSE
 package.json
 rollup.config.js
 yarn.lock
+*.md

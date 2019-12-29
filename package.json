@@ -20,7 +20,7 @@
   "scripts": {
     "gen:parser": "pegjs -o src/js/logo/generated/parser.js src/pegjs/logo.pegjs",
     "gen:js": "rollup -c",
-    "gen:styles": "stylus src/styles/style.styl -o public/css/main.css",
+    "gen:styles": "stylus src/styles/style.styl -o static/css/main.css",
     "gen:index": "pug -o . -P src/views/index.pug",
     "build": "yarn gen:styles & yarn gen:parser & yarn gen:js & yarn gen:index",
     "test": "nodeunit tests",
