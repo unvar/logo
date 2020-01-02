@@ -1,6 +1,7 @@
 const CACHE_NAME = 'turtle-cache-v1';
 const urlsToCache = [
   '/',
+  '/index.html',
   '/static/css/main.css',
   '/static/vendor/jquery/plugins/qtip/jquery.qtip.css',
   '/static/vendor/jquery/1.7.1/jquery.js',
@@ -28,11 +29,7 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
       .then(function(response) {
-        // Cache hit - return response
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
+        return response || fetch(event.request);
       }
     )
   );
