@@ -48,6 +48,17 @@
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/vendor/jquery/plugins/qtip/jquery.qtip.css">
     <link rel="shortcut icon" type="image/x-icon" href="/static/img/mascot.ico">
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/static/js/sw.js').then(
+            function(registration) {}, function(err) {
+            console.error('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+      
+    </script>
   </head>
   <div id="fb-root"></div>
   <script>
@@ -169,6 +180,10 @@ repeat 12 [ repeat 4 [ fd x lt 90 ] penup rt x fd (x*2) x = x + 5 pendown ]</pre
       <div class="content">
         <h3 class="title">Stars<a class="copy" href="#try">(try this)</a></h3>
         <pre class="code">repeat 6 [ penup rt 60 fd 100 pendown repeat 6 [ repeat 2 [ rt 30 fd 25 rt 90 ] lt 180 ]]</pre>
+        <h3 class="title">8-blade Fan<a class="copy" href="#try">(try this)</a></h3>
+        <pre class="code">clear
+repeat 8 [repeat 4 [rt 45 fd 50] rt 135 fd 150]
+home</pre>
         <h3 class="title">Dandelion Flower<a class="copy" href="#try">(try this)</a></h3>
         <pre class="code">clear
 penup
