@@ -52,6 +52,17 @@ html(lang='en', itemscope itemtype='http://schema.org/Product')
     link(rel='stylesheet', href='/static/vendor/jquery/plugins/qtip/jquery.qtip.css')
     link(rel='shortcut icon', type='image/x-icon', href='/static/img/mascot.ico')
 
+    unless error
+      script.
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/static/js/sw.js').then(
+              function(registration) {}, function(err) {
+              console.error('ServiceWorker registration failed: ', err);
+            });
+          });
+        }
+
   block body
 
   unless error
